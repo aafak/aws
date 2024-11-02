@@ -1,11 +1,10 @@
 # To install a sample go APP inside ec2 instance and access it
 
-# Create a new instance and add inbound rule by editing the network settings
+Create a new instance and add inbound rule by editing the network settings
 ![image](https://github.com/user-attachments/assets/078040c1-febc-4a71-b153-558ae6f99904)
 
 
-Add the following user data in additional details
-
+Add the following user data in additional details:
 ```
 #!/bin/bash
 # Update package list and install Go
@@ -50,12 +49,11 @@ nohup ./myapp > /home/ubuntu/myapp/myapp.log 2>&1 &
 ![image](https://github.com/user-attachments/assets/67976af0-8ce5-4a28-a135-1ed1e1526940)
 
 
-# After the instance started upa nd running, you browse the URL http://instance-public-ip:8080, You should see following
+# After the instance started up and running
+Browse the URL http://instance-public-ip:8080, You should see following
 
 ![image](https://github.com/user-attachments/assets/6844e9f1-6d7e-4a69-bed4-c49ca6cdcb9d)
 
 
 ![image](https://github.com/user-attachments/assets/5a208b09-1dba-46c2-bbab-79d5d217d2fb)
-
-
 
