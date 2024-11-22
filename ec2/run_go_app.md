@@ -48,6 +48,26 @@ nohup ./myapp > /home/ubuntu/myapp/myapp.log 2>&1 &
 
 ![image](https://github.com/user-attachments/assets/67976af0-8ce5-4a28-a135-1ed1e1526940)
 
+# Or you can add simple apache2 http server
+```
+#!/bin/bash
+# Update package list
+sudo apt update -y
+
+# Install Apache and Go
+sudo apt install -y apache2
+
+# Get hostname and IP address
+hostname=$(hostname)
+ip_address=$(hostname -I | cut -d' ' -f1)
+
+# Write server details to index.html
+echo "<h1>Server Details:</h1><p><strong>Hostname:</strong> $hostname</p><p><strong>IP Address:</strong> $ip_address</p>" | sudo tee /var/www/html/index.html
+
+# Restart Apache to apply changes
+sudo systemctl restart apache2
+```
+
 
 # After the instance started up and running
 Browse the URL http://instance-public-ip:8080, You should see following
